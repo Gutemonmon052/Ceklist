@@ -1,0 +1,299 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Sniglet:wght@400;800&display=swap");
+
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+@layer base {
+  body {
+    @apply bg-[#FAFAFA];
+  }
+
+  /*Navbar*/
+
+  .navbar {
+    @apply flex items-start justify-between w-full pr-6 pl-6 pt-9 pb-6 fixed z-30;
+  }
+
+  .logo {
+    @apply flex items-center justify-center;
+  }
+
+  
+  .progress-completed {
+    @apply transition-all duration-1000;
+  }
+
+  .progress-completed.done {
+    @apply translate-x-[100%];
+  }
+
+  .progress-bar {
+    @apply flex items-center md:pl-6 ;
+  }
+
+  .progress-container {
+    @apply flex flex-row items-center;
+  }
+
+  .progress-content {
+    @apply flex flex-col items-center py-[10px] pr-4;
+  }
+
+  .progress-label {
+    @apply flex justify-between w-[100%] pb-2;
+  }
+
+  .progress-label p {
+    @apply flex font-cabin text-[14px];
+  }
+
+  .progress-label p:first-child {
+    @apply font-[400] text-[#2F2F2F];
+  }
+
+  .progress-label p:nth-child(2) {
+    @apply font-[400] text-[#757575];
+  }
+
+  .progress {
+    @apply flex items-center;
+  }
+
+  .progress-total {
+    @apply flex items-center w-[270px] h-[10px] bg-[#D9D9D9] rounded-[20px];
+  }
+
+  .progress-completed {
+    @apply flex items-center h-[100%] bg-[#2F2F2F] rounded-[20px] transition-all duration-300;
+  }
+
+  .progress-percentage {
+    @apply flex justify-end pt-6;
+  }
+
+  .progress-percentage h2 {
+    @apply font-sniglet text-[24px] text-[#2F2F2F];
+  }
+
+  /* Content */
+  .content1 {
+    @apply flex flex-row items-center h-[100%] w-[100%] relative top-[120px];
+  }
+  .list-content {
+    @apply flex w-[60%] relative;
+  }
+  /* Card Container */
+  .list-content {
+    @apply grid grid-cols-2 gap-3 m-0 pl-[30px];
+  }
+
+  /* Card */
+
+  .card {
+    animation: moveUpDown 2s infinite ease-in-out;
+  }
+
+  .list-content:hover .card {
+    animation: popUp 0.3s ease-in-out forwards;
+  }
+  
+  @keyframes popUp {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .card {
+    @apply flex flex-col items-center bg-[#D9D9D9] rounded-[11px] p-[20px] min-w-[350px] h-[200px] shadow-[6px_4px_0_rgba(0,0,0,0.9)] border-2 border-[#2F2F2F];
+  }
+
+  .card:hover{
+    @apply shadow-[3px_2px_0_rgba(0,0,0,1)] text-[#2F2F2F] bg-[#FAFAFA];
+  }
+
+  .card-content {
+    @apply flex flex-col justify-center items-start w-[100%] h-[100%] pt-[10px] pr-[20px] pl-[5px];
+  }
+  .card h4 {
+    @apply font-sniglet text-[30px] text-[#2F2F2F];
+  }
+  .card p {
+    @apply font-cabin text-[12px] h-[100%] text-[#323232] text-justify break-normal whitespace-pre-line;
+  }
+  .action{
+    @apply flex items-end justify-end gap-2 w-[100%] h-[100%];
+  }
+
+  .action button{
+    @apply flex items-center justify-center w-[30px] h-[30px] rounded-[8px] border-[1px] border-[#2F2F2F] shadow-[3px_2px_0_rgba(0,0,0,0.9)];
+  }
+
+  .action button:first-child{
+    @apply bg-[#D9D9D9] 
+  }
+
+  .action button:first-child:hover{
+    @apply bg-[#2f2f2f]  shadow-[2px_1px_0_rgba(0,0,0,0.9)]
+  }
+
+  .action button:nth-child(2){
+    @apply bg-[#2F2F2F]
+  }
+
+  .action button:nth-child(2):hover{
+    @apply bg-[#D9D9D9] shadow-[2px_1px_0_rgba(0,0,0,0.9)]
+  }
+
+  /* Date Time Content */
+  .date-time-content {
+    @apply fixed top-[120px] right-[80px] flex items-center justify-center w-[30%] flex-col;
+  }
+
+  .date-content {
+    @apply flex items-center w-[46%];
+  }
+
+  .date-month {
+    @apply flex flex-col p-0 m-0 items-center justify-end;
+  }
+  
+  .date-month h2 {
+    @apply h-[160px] font-sniglet text-[150px] text-[#2F2F2F] drop-shadow-[6px_4px_0_rgba(212,212,212,1)];
+  }
+
+  .date-month p {
+    @apply font-sniglet text-[95px] text-[#2F2F2F] drop-shadow-[6px_4px_0_rgba(212,212,212,1)];
+  }
+
+  .year {
+    @apply flex items-center w-[100%] rotate-90 pr-[30px];
+  }
+
+  
+  .year p{
+    @apply font-sniglet text-[59px] text-[#2F2F2F] drop-shadow-[6px_4px_0_rgba(212,212,212,1)] tracking-[20px];
+  }
+
+  .time{
+    @apply flex items-center justify-center w-[100%];
+  }
+
+  .time h3 {
+    @apply font-sniglet text-[50px] text-transparent text-stroke-1 text-stroke-[#2F2F2F] drop-shadow-[6px_4px_0_rgba(212,212,212,1)] ;
+  }
+
+  /* Content 2 */
+
+  
+  .content2 {
+    @apply flex justify-center items-center w-[100%] fixed bottom-7;
+  }
+
+  /* .todo-notif{
+    @apply flex justify-center items-center w-[30%] rounded-[10px] fixed bottom-[100px] h-[20px] bg-[#393838] z-10 drop-shadow-md ;
+  } */
+
+  .todo-notif p{
+    @apply font-sniglet text-[16px] text-[#FAFAFA];
+  }
+
+  .todo-chat{ 
+    @apply flex items-center justify-center w-[100%] font-sniglet gap-1 opacity-0 transition-opacity duration-300;
+  }
+
+  .todo-chat:hover{
+    @apply opacity-100;
+  }
+
+  .todo-chat input{
+    @apply flex items-start justify-between  w-[400px] h-[70px] pl-8 pt-3 pr-3 pb-3 rounded-[40px] outline-0 font-sniglet drop-shadow-[3px_2px_0_rgba(212,212,212,1)] bg-transparent border-[1px] 
+  }
+
+  .todo-chat input:hover{
+    @apply drop-shadow-[2px_1px_0_rgba(212,212,212,1)]
+  }
+
+  .todo-chat input:focus{
+    @apply bg-[#DFDFDF] drop-shadow-[3px_2px_0_rgba(212,212,212,1)]
+  }
+
+  .todo-chat button{
+    @apply flex items-center justify-center rounded-[50%] w-[70px] h-[70px] drop-shadow-[3px_2px_0_rgba(212,212,212,1)] bg-[#2F2F2F]
+  }
+
+  .todo-chat button:hover{
+    @apply  bg-[#DFDFDF] drop-shadow-[2px_1px_0_rgba(212,212,212,1)] stroke-[#2F2F2F]
+  }
+
+  .todo-chat button, .todo-chat input{
+    @apply transition-all duration-300;
+    transform: scale(0);
+  }
+
+  .todo-chat:hover button, .todo-chat:hover input{
+    @apply transform scale-100;
+  }
+
+
+  @media screen and (max-width: 768px) {
+      .progress-bar{
+        @apply pr-[10px];
+      }
+
+      .date-time-content{
+        @apply relative top-[100px] right-0 flex items-center justify-center w-[100%] flex-col;
+      }
+      
+      .date-month, .year{
+        @apply flex items-center justify-center;
+      }
+
+      .year p{
+        @apply pt-[120px] pl-[60px];
+      }
+
+      .list-content {
+        @apply flex flex-col gap-3 relative justify-center items-center w-[100%] pl-0;
+      }
+
+      .card {
+        @apply w-[100vw] m-0 gap-0 justify-center items-center;
+      }
+  }
+}
