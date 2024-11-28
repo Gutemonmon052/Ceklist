@@ -1,2 +1,2 @@
 # Ceklist
- To Do list website with React and Tailwind Css
+ To Do list website with React and Tailwind CSS
